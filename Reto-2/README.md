@@ -8,8 +8,8 @@ agregación para el mantenimiento de los equipos.
 
 ## Diagrama UML de una subestación eléctrica
 
-<pre>
- classDiagram
+```mermaid
+classDiagram
     class Subestacion {
         + Nombre
         + Ubicación
@@ -57,4 +57,3 @@ agregación para el mantenimiento de los equipos.
     Subestacion "1" *-- "*"  ComponenteElectrico : 
     Tecnico "1" --> "*" OrdenMantenimiento : 
     OrdenMantenimiento "1" o-- "1" ComponenteElectrico : 
-</pre>
