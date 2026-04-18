@@ -3,43 +3,52 @@ class Point:
         self.x = x
         self.y = y
 
+
 class Line:
     def __init__(self, start: "Point", end: "Point"):
         self.start = start
         self.end = end
-    def compute_lenght(self)-> float:
-        return ((self.end.x - self.start.x)**2 + (self.end.y - self.start.y)**2)**(0.5)
-    def compute_slope(self)-> float:
+
+    def compute_lenght(self) -> float:
+        return (
+            (self.end.x - self.start.x) ** 2 + (self.end.y - self.start.y) ** 2
+        ) ** (0.5)
+
+    def compute_slope(self) -> float:
         if self.end.x != self.start.x:
             slope = (self.end.y - self.start.y) / (self.end.x - self.start.x)
         else:
             slope = "infinity"
         return slope
-    def compute_horizontal_cross(self)-> bool:
+
+    def compute_horizontal_cross(self) -> bool:
         return self.start.y * self.end.y >= 0
-    def compute_vertical_cross(self)-> bool:
+
+    def compute_vertical_cross(self) -> bool:
         return self.start.x * self.end.x >= 0
+
     def discretize_line(self, n: int):
         self.points_array = []
-        if n <= 2: return self.start
+        if n <= 2:
+            return self.start
 
         for i in range(n):
-            div = i / (n-1)
+            div = i / (n - 1)
             new_x = self.start.x + (self.end.x - self.start.x) * div
             new_y = self.start.y + (self.end.y - self.start.y) * div
             self.points_array.append(Point(new_x, new_y))
 
         return self.points_array
 
-    
+
 class Rectangle:
     def __init__(self, line1: "Line", line2: "Line", line3: "Line", line4: "Line"):
         self.lines = [line1, line2, line3, line4]
         self.w = line1.compute_lenght()
         self.h = line3.compute_lenght()
-    def compute_area(self)-> float:
+
+    def compute_area(self) -> float:
         return self.w * self.h
-    
 
 
 if __name__ == "__main__":
@@ -58,7 +67,7 @@ if __name__ == "__main__":
         print("La línea si cruza por el eje y")
     else:
         print("La línea no cruza por el eje y")
-    discreto = (linea.discretize_line(3))
+    discreto = linea.discretize_line(3)
     print([(d.x, d.y) for d in discreto])
 
     inf_izq = Point(0, 0)

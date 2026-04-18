@@ -1,12 +1,13 @@
 def consecutivo(lista_num: list) -> list:
-    mayor : int = lista_num[0] + lista_num[1]
-    i : int = 2
-    while i <= len(lista_num)-1:
-        suma : int = lista_num[i-1] + lista_num[i]
+    mayor: int = lista_num[0] + lista_num[1]
+    i: int = 2
+    while i <= len(lista_num) - 1:
+        suma: int = lista_num[i - 1] + lista_num[i]
         if suma > mayor:
             mayor = suma
         i += 1
     return mayor
+
 
 if __name__ == "__main__":
     lista = []
@@ -15,8 +16,8 @@ if __name__ == "__main__":
         if pri == 0:
             break
         lista.append(pri)
-    res : int = consecutivo(lista)
-    print(f"La suma más grande de dos números consecutivos en la lista es: {res}") 
+    res: int = consecutivo(lista)
+    print(f"La suma más grande de dos números consecutivos en la lista es: {res}")
 
 """   --- RETO SUMA No. CONSECUTIVOS
 Se establece la suma de los dos primeros números del arreglo, 
