@@ -1,3 +1,11 @@
+"""--- RETO 4: Restaurante Reviste ---
+En este reto, se ha añadido al código del restaurante hecho
+previamente atributos privados a las clases, así como métodos
+getter y setter para cada uno de ellos. También se introdujo
+la clase "MedioPago" con sus respectivas subclases "Tarjeta"
+y "Efectivo" para manejar diferentes formas de pago."""
+
+
 class MenuItem:
     def __init__(self, name: str, price: float):
         self.__name = name

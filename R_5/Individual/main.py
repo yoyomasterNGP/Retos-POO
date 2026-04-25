@@ -1,3 +1,9 @@
+"""--- RETO 5: Módulos individuales ---
+En este reto, se ha separado el código Shape.py en varios
+módulos individuales para cada clase. Cada
+clase se encuentra en un archivo separado, lo que hace que
+sea más fácil de entender y modificar en el futuro."""
+
 import Geometry as geometry
 
 Inicio = geometry.Point(0, 0)
